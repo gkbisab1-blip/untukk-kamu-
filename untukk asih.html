@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu 🤍</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #07140f;
+    color: #f4fff9;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+.bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(92, 180, 137, .18), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(48, 130, 94, .18), transparent 30%),
+        #07140f;
+}
+
+.glow {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(95, 210, 150, .08);
+    filter: blur(60px);
+    animation: moveGlow 8s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+.glow.one {
+    top: 10%;
+    left: -80px;
+}
+
+.glow.two {
+    bottom: 5%;
+    right: -80px;
+    animation-delay: 2s;
+}
+
+@keyframes moveGlow {
+    from { transform: translate(0,0); }
+    to { transform: translate(80px,50px); }
+}
+
+/* GENERAL */
+section {
+    min-height: 100vh;
+    padding: 70px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+}
+
+.small {
+    color: #8ed8b0;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(38px, 10vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(28px, 7vw, 46px);
+    margin-bottom: 20px;
+}
+
+p {
+    color: #c9dcd3;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 30px;
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.07);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .3s;
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover {
+    background: rgba(255,255,255,.14);
+    transform: translateY(-3px);
+}
+
+/* HERO */
+.hero-heart {
+    font-size: 55px;
+    margin-bottom: 25px;
+    animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+.hero-name {
+    color: #8ed8b0;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.2);
+    margin-top: 25px;
+}
+
+.card p {
+    text-align: left;
+}
+
+/* REASONS */
+.reason {
+    padding: 20px;
+    margin: 12px 0;
+    background: rgba(255,255,255,.045);
+    border-radius: 18px;
+    border-left: 3px solid #76c99e;
+    text-align: left;
+}
+
+.reason strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #a5e6c1;
+}
+
+/* SECRET MESSAGE */
+.secret {
+    display: none;
+    margin-top: 20px;
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(125, 210, 160, .08);
+    border: 1px solid rgba(125, 210, 160, .2);
+    animation: fadeIn .7s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FINAL */
+.final {
+    min-height: 100vh;
+}
+
+.final-box {
+    padding: 35px 25px;
+    border-radius: 30px;
+    background: linear-gradient(
+        145deg,
+        rgba(100,190,140,.12),
+        rgba(255,255,255,.035)
+    );
+    border: 1px solid rgba(150,230,180,.15);
+}
+
+.signature {
+    margin-top: 35px;
+    color: #8ed8b0;
+    font-size: 14px;
+}
+
+/* FLOATING HEARTS */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 18px;
+    opacity: .5;
+    animation: floatUp linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: .6;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SCROLL INDICATOR */
+.scroll {
+    margin-top: 50px;
+    font-size: 12px;
+    color: #719786;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(7px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<!-- BAGIAN 1 -->
+<section>
+    <div class="container">
+
+        <div class="hero-heart">♡</div>
+
+        <div class="small">untuk seseorang yang berarti</div>
+
+        <h1>
+            Hai,<br>
+            <span class="hero-name">asieh maulani</span>
+        </h1>
+
+        <p>
+            ada sesuatu yang pengen aku sampaikan
+            bukan karena aku nggak tahu harus ngomong apa,
+            tapi justru karena terlalu banyak yang pengen aku bilang
+        </p>
+
+        <button class="btn"
+            onclick="document.getElementById('mintaMaaf').scrollIntoView()">
+            Baca sampai selesai
+        </button>
+
+        <div class="scroll">
+            ↓ scroll pelan-pelan
+        </div>
+
+    </div>
+</section>
+
+
+<!-- BAGIAN 2 -->
+<section id="mintaMaaf">
+    <div class="container">
+
+        <div class="small">pertama</div>
+
+        <h2>aku mau minta maaf.</h2>
+
+        <div class="card">
+
+            <p>
+                aku sadar mungkin ada sikap, perkataan, atau tindakan
+                aku yang bikin kamu sakit hati, kecewa, dan capek
+            </p>
+
+            <br>
+
+            <p>
+                dan aku nggak mau sekadar bilang
+                <b>"maaf ya"</b> lalu semuanya dianggap selesai.
+                karena aku tahu rasa sakit nggak bekerja sesimpel itu
+            </p>
+
+            <br>
+
+            <p>
+                aku benar-benar nyesel karena orang yang seharusnya
+                bikin kamu merasa aman malah bisa jadi alasan kamu
+                merasa nggak nyaman, maaf udah bikin kamu marah
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- BAGIAN 3 -->
+<section>
+    <div class="container">
+
+        <div class="small">aku sadar</div>
+
+        <h2>aku salah di bagian ini.</h2>
+
+        <div class="reason">
+
+            <strong>01. aku kurang ngerti perasaan kamu</strong>
+
+            <p>
+                maaf aku ga langsung bujuk
+                padahal tau kalo kamu cemburu
+                maaf aku malah ngebales kamu dan ngebahas apa yg aku rasain
+            </p>
+
+        </div>
+
+        <div class="reason">
+
+            <strong>02. aku mungkin terlalu egois</strong>
+
+            <p>
+                aku bener bener minta maaf bukan nya kelarin malah mgebahas perasaanku
+                maaf jadi besar karna aku egois
+            </p>
+
+        </div>
+
+        <div class="reason">
+
+            <strong>03. Aku masih harus belajar</strong>
+
+            <p>
+                aku masih harus banyak belajar komunikasi sama kamu dan tentang kamu
+                kita sama sama belajar komunikasi ya
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- BAGIAN 4 -->
+<section>
+    <div class="container">
+
+        <div class="small">tapi ada satu hal</div>
+
+        <h2>aku nggak mau kehilangan kamu cuma karena ego.</h2>
+
+        <div class="card">
+
+            <p>
+                aku nggak berharap satu halaman website ini
+                langsung maafin aku
+            </p>
+
+            <br>
+
+            <p>
+                aku cuma mau kamu tau bahwa aku masih peduli
+                aku masih menghargai kamu.
+                dam aku benar-benar menghargai semua waktu,
+                perhatian, dan hal-hal kecil yang pernah kamu kasih ke aku.
+            </p>
+
+            <br>
+
+            <p>
+                aku bener bener mau minta maaf
+                aku mau memperbaiki hubungan kita
+                maafin aku ya sayangku
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- BAGIAN 5 -->
+<section>
+    <div class="container">
+
+        <div class="small">ada pesan kecil</div>
+
+        <h2>jangan buka kalau kamu belum siap.</h2>
+
+        <button class="btn" onclick="openSecret()">
+            buka pesan rahasia
+        </button>
+
+        <div class="secret" id="secret">
+
+            <p>
+                aku mungkin nggak selalu bisa menjadi orang yang
+                paling sempurna buat kamu
+            </p>
+
+            <br>
+
+            <p>
+                tapi aku ingin menjadi seseorang yang mau belajar,
+                mau mendengarkan, dan mau memperbaiki kesalahan aku
+            </p>
+
+            <br>
+
+            <p>
+                aku bener bener sayanggg kamu
+                aku harap kamu mau maafin aku, aku cinta kamu
+                loveeee youuu so muachh 
+          </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- BAGIAN 6 -->
+<section class="final">
+    <div class="container">
+
+        <div class="final-box">
+
+            <div class="hero-heart">♡</div>
+
+            <div class="small">terakhir</div>
+
+            <h2>
+              maafin aku,
+                <span class="hero-name">asieh maulani.</span>
+            </h2>
+
+            <p>
+                aku minta maaf ya sayang aku mau kamu tau bahwa
+                permintaan maaf ini datang dari hati yang benar-benar
+                sadar kalau aku salah dan masih harus banyak belajar
+            </p>
+
+            <br>
+
+            <p>
+                makasih udah pernah hadir,
+                pernah bertahan,
+                dan pernah memberikan banyak hal berarti
+                dalam hidupku.
+            </p>
+
+            <div class="signature">
+                — aditya
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+
+/* PESAN RAHASIA */
+function openSecret() {
+    const secret = document.getElementById("secret");
+
+    if (secret.style.display === "block") {
+        secret.style.display = "none";
+    } else {
+        secret.style.display = "block";
+    }
+}
+
+
+/* FLOATING HEART */
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = Math.random() > .5 ? "♡" : "♥";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    heart.style.fontSize =
+        (12 + Math.random() * 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 10000);
+}
+
+setInterval(createHeart, 1200);
+
+</script>
+
+</body>
+</html>
